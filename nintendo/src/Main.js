@@ -5,10 +5,8 @@ import Play from "./Play";
 
 const Main = () => (
   <main>
-    <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route exact path='/play' component={Play}/>
-    </Switch>
+    <Route exact path='/' component={Home}/>
+    <Route path='/play' component={Play}/>
   </main>
 )
 
