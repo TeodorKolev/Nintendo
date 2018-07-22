@@ -6,7 +6,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import {Redirect} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import {connect} from "react-redux";
 import {compose} from "redux";
 
@@ -44,7 +44,7 @@ class Home extends React.Component {
     const { classes } = this.props;
 
     if (this.state.toDashboard === true) {
-      return <Redirect to='/play'/>
+      return <Redirect to={`${process.env.PUBLIC_URL}/play`}/>
     }
 
     return (

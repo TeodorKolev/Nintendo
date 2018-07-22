@@ -39,7 +39,7 @@ class Play extends React.Component {
     return (
       <div>
         <ul>
-          <Link to='/'>Back to home</Link>
+          <Link to={`${process.env.PUBLIC_URL}/`}>Back to home</Link>
         </ul>
         <div id="emu"></div>
       </div>
