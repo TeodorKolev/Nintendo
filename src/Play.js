@@ -1,12 +1,11 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import { connect } from "react-redux";
 
 class Play extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(this.props.appName)
+    console.log(this.props.match.params.rom)
   }
 
   componentDidMount() {
@@ -21,7 +20,7 @@ class Play extends React.Component {
       'var NepPlayer = "#emu";\n' +
       'var NepEmu = "nes";\n' +
       'var NepLang = "en";\n' +
-      'var gameUrl = "./nes/' + this.props.appName + '.nes";';
+      'var gameUrl = "./nes/' + this.props.match.params.rom + '.nes";';
     console.log(stringBuilder)
     defineSettings.text = stringBuilder;
     document.body.appendChild(defineSettings);
@@ -47,10 +46,5 @@ class Play extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    appName: state
-  };
-}
 
-export default connect(mapStateToProps)(Play)
+export default Play
