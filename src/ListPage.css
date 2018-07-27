@@ -1,0 +1,10 @@
+.container {
+    margin-top: 200px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 20px;
+}

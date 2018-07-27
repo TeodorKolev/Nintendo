@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from "react-router-dom";
+import './ListPage.css';
 
 const roms = [
   {'id': 1, 'name': 'Bomberman', 'value': 'Bomberman'},
@@ -7,26 +8,24 @@ const roms = [
   {'id': 3, 'name': 'Dig Dug 2', 'value': 'DigDug2'},
 ];
 
-const romsList = roms.map( (rom, index) => {
-  return <Link
-    key={index}
-    to={'/run/' + encodeURIComponent(rom.value)}
-    className="list-group-item">
-    {rom.name}
-  </Link>
+const romsList = roms.map((rom, index) => {
+  return <li>
+    <Link
+      key={index}
+      to={'/run/' + encodeURIComponent(rom.value)}
+      className="list-group-item">
+      {rom.name}
+    </Link>
+  </li>
 });
 
 class ListPage extends Component {
   render() {
     return (
-      <div className="container ListPage my-4">
-        <div className="row justify-content-center">
-          <div className="col-md-8">
-            <div className="mb-4">
-              {romsList}
-            </div>
-          </div>
-        </div>
+      <div className="container">
+        <ul>
+          {romsList}
+        </ul>
       </div>
     );
   }
