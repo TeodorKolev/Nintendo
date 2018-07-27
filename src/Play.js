@@ -20,7 +20,7 @@ class Play extends React.Component {
       'var NepPlayer = "#emu";\n' +
       'var NepEmu = "nes";\n' +
       'var NepLang = "en";\n' +
-      'var gameUrl = "./nes/' + this.props.match.params.rom + '.nes";';
+      'var gameUrl = "' + process.env.PUBLIC_URL + '/nes/' + this.props.match.params.rom + '.nes";';
     console.log(stringBuilder)
     defineSettings.text = stringBuilder;
     document.body.appendChild(defineSettings);

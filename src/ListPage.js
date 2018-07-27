@@ -10,7 +10,7 @@ const roms = [
 const romsList = roms.map( (rom, index) => {
   return <Link
     key={index}
-    to={"/run/" + encodeURIComponent(rom.value)}
+    to={'/run/' + encodeURIComponent(rom.value)}
     className="list-group-item">
     {rom.name}
   </Link>
